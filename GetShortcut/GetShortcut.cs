@@ -1,6 +1,5 @@
-﻿namespace GetShortcut;
+﻿namespace PSCmdlets.GetShortcutCmdlet;
 
-using Microsoft.VisualBasic.FileIO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,12 +7,12 @@ using System.IO;
 using System.Linq;
 using System.Management.Automation;
 using System.Management.Automation.Language;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
 
 
 [Cmdlet(VerbsCommon.Get, "Shortcut")]
+[OutputType(typeof(void))]
 [Alias("goto")]
 public class GetShortcut : PSCmdlet
 {
@@ -52,9 +51,8 @@ public class GetShortcut : PSCmdlet
     {
       if (List)
       {
-        Host.UI.WriteLine(ConsoleColor.Green, Host.UI.RawUI.BackgroundColor, $"\n  {"Shortcut",-15} path");
+        Host.UI.WriteLine(ConsoleColor.Green, Host.UI.RawUI.BackgroundColor, $"\n  {"Shortcut",-15} Path");
         Host.UI.WriteLine(ConsoleColor.Green, Host.UI.RawUI.BackgroundColor, $"  {new String('-',8), -15} {new String('-',4)}");
-        //var cliList = new StringBuilder("\nAvailable folder shortcuts:\n");
         var cliList = new StringBuilder();
         foreach (var kvp in folderShortcuts)
           cliList.AppendLine($"  {kvp.Key,-15} {kvp.Value}");

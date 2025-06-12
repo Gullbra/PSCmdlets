@@ -1,4 +1,4 @@
-# PS Cmdlet "Recipe"
+﻿# PS Cmdlet "Recipe"
 
 ## Module (C#)
 
@@ -66,25 +66,40 @@ Get-Module -name <ModuleName> | Select-Object Name, Version, Path
 ```
 
 
+## Versioning
+
+Follow the MAJOR.MINOR.PATCH format:
+
+MAJOR: Breaking changes (cmdlet removed, parameter removed, behavior changed)
+MINOR: New features (new cmdlets, new parameters, new functionality)
+PATCH: Bug fixes and small improvements
+
+Examples:
+
+1.0.0 → 1.0.1 (bug fix)
+1.0.1 → 1.1.0 (added new cmdlet)
+1.1.0 → 2.0.0 (removed a parameter, breaking change)
+
+
 ## Manifest
 
 [MsDocs](https://learn.microsoft.com/en-us/powershell/scripting/developer/module/how-to-write-a-powershell-module-manifest?view=powershell-7.5)
 
 ```powershell
 @{
+    RootModule = 'MyCustomCmdlet.dll'                   # DON'T FORGET
     ModuleVersion = '1.0.0'
-    GUID = '12345678-1234-1234-1234-123456789012'  # Generate a new GUID
+    GUID = '12345678-1234-1234-1234-123456789012'       # Generate a new GUID
     Author = 'Your Name'
     CompanyName = 'Your Company'
     Copyright = '(c) 2025 Your Company. All rights reserved.'
     Description = 'Custom PowerShell cmdlets'
     PowerShellVersion = '7.0'
     RequiredAssemblies = @('MyCustomCmdlets.dll')
-    CmdletsToExport = @('Go-ToFolder', 'Add-FolderShortcut') // Cmdlets in module (one class each)
-    AliasesToExport = @('goto')
+    CmdletsToExport = @('Verb-Noun1', 'Verb-Noun2')     # Cmdlets in module (one class each)
+    AliasesToExport = @('vn')
     FunctionsToExport = @()
     VariablesToExport = @()
-    AliasesToExport = @()
 }
 ```
 

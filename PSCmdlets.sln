@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenIDE", "OpenIDE\OpenIDE.csproj", "{50FFA94B-2F06-4335-9804-D839456D84BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenIDECmdlet", "OpenIDE\OpenIDECmdlet.csproj", "{50FFA94B-2F06-4335-9804-D839456D84BD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestCmdlet", "TestCmdlet\TestCmdlet.csproj", "{21F2452D-D350-4D6F-BFEB-A336190C11EC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GetShortcut", "GetShortcut\GetShortcut.csproj", "{9754E381-A617-4AD4-BB01-16F74360DEFC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GetShortcutCmdlet", "GetShortcut\GetShortcutCmdlet.csproj", "{9754E381-A617-4AD4-BB01-16F74360DEFC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{61AF38E1-0693-45C2-8675-E475407A4D53}"
 	ProjectSection(SolutionItems) = preProject
-		GetShortcut\Claude.cs = GetShortcut\Claude.cs
+		DeployFromPathScript.ps1 = DeployFromPathScript.ps1
 		Guide.md = Guide.md
 		Versioning.md = Versioning.md
 	EndProjectSection
