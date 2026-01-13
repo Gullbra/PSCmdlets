@@ -103,7 +103,7 @@ public class GetShortcut : PSCmdlet
     if (userEnvVars == null)
       return envShortcuts;
 
-    foreach (System.Collections.DictionaryEntry envVar in userEnvVars)
+    foreach (DictionaryEntry envVar in userEnvVars)
     {
       string? name = envVar.Key.ToString(), value = envVar.Value?.ToString();
 
